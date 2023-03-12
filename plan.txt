@@ -1,0 +1,15 @@
+the website should contain:
+1- header
+ a- logo 
+ b- nav-bar 
+  . slider from left to right with for option
+2- main content
+ a- three photos and some phrases that change each 10seconds
+ b- some section about some statistics
+ c- some cards for additionals informations
+ d- preferably some gallery down / projects
+
+3- footer
+ a- address
+ b- copyright
+ c- socials
