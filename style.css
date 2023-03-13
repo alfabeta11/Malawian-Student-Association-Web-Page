@@ -159,10 +159,6 @@ header i, #closeBtn {
 }
 i:hover {opacity: .8}
 
-/*********************************************** FROM W3SCHOOLS **************************************** /
-
-* {box-sizing:border-box}
-
 /* Slideshow container */
 .slideshow-container {
     max-width: 1000px;
