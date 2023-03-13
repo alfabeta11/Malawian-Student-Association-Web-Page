@@ -202,7 +202,7 @@ i:hover {opacity: .8}
   .text {
     background-color: rgba(90, 4, 4, .25);
     color: rgba(248, 244, 244, 0.87);
-    font-size: 32px;
+/*     font-size: 32px; */
     padding: 8px 2rem;
     position: absolute;
     top: 0;
