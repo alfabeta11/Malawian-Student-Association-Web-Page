@@ -33,7 +33,19 @@ a {
 .big-title {
     font-size: 30px;
 }
+.white {
+    color: white;
+    font-weight: 600;
+}
 
+h1 {
+    font-size: 32px;
+    font-style: italic;
+    text-rendering: geometricPrecision;
+    text-transform: capitalize;
+    opacity: .9;
+    
+}
 /** list ***/
 ul {
     list-style: none;
@@ -175,6 +187,12 @@ i:hover {opacity: .8}
     display: none;
   }
   
+  .mySlides img {
+    transition: all .6s ease-in-out;
+  }
+  .mySlides:hover img{
+    filter: blur(2px);
+  }
   /* Next & previous buttons */
   .prev, .next {
     cursor: pointer;
@@ -206,7 +224,7 @@ i:hover {opacity: .8}
   .text {
     background-color: rgba(90, 4, 4, .75);
     color: rgba(248, 244, 244, 0.87);
-    padding: 8px 2rem;
+    padding: 1rem 2rem;
     position: absolute;
     bottom: 10px;
     width: 100%;
@@ -215,10 +233,12 @@ i:hover {opacity: .8}
     display: grid;
     grid-template-columns: auto auto auto;
     text-transform: capitalize;
+    line-height: 1.2;
+    letter-spacing: 1px;
   }
   .text p {
     grid-column: span 2;
-    font-size: 32px;
+    font-size: 36px;
   }
   .text button {
     align-self: center;
@@ -255,7 +275,11 @@ i:hover {opacity: .8}
     padding: 4px 15px;
     font-size: 16px;
    }
+   .text {
+    padding: 1rem;
+   }
   }
+
 
   /* Number text (1/3 etc) */
   .numbertext {
@@ -292,3 +316,34 @@ i:hover {opacity: .8}
     from {opacity: .4}
     to {opacity: 1}
   }
+
+    .about-us {
+        margin-top: 22px;
+        background-color: rgb(90, 4, 4);
+        color: #ccc;
+        padding: 22px;
+        text-align: center;
+    }
+
+    .about-us h3 {
+        font-style: italic;
+        color: #ddd;
+        font-size: larger;
+    }
+    .our-motto {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 22px;
+        margin: 44px 0;
+        gap: 22px;
+        text-align: left;;
+        border: 2px solid #717171;
+    }
+
+    @media screen and (max-width: 600px) {
+        .our-motto {
+            text-align: center;
+            grid-template-columns: 1fr;
+            border: 2px solid #717171;
+        }
+    }
