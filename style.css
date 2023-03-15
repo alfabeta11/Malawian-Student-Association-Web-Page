@@ -6,7 +6,7 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-    transition: transform .4s ease-in-out;
+    
 }
 body {
     background-color: rgba(255, 255, 249, 0.986);
@@ -24,6 +24,7 @@ body {
 a {
     text-decoration: none;
     color: #333;
+    transition: transform .4s ease-in-out;
 }
 
 .medium-title {
@@ -84,6 +85,7 @@ header {
     max-width: 600px;
     display: none;
     text-transform: capitalize;
+    transition: transform .4s ease-in-out;
 }
 @media only screen and (min-width: 700px) {
     .nav-bar {
@@ -126,6 +128,7 @@ header {
     background-color: rgba(0, 0, 0, .96);
     z-index: 5;
     padding: 15px 0;
+    transition: transform .4s ease-in-out;
     transform: translateX(-100%);
   }
   
@@ -140,6 +143,7 @@ header {
     max-width: 400px;
     height: 100vh;
     padding: 30px;
+    transition: transform .4s ease-in-out;
   }
 
 header i, #closeBtn {
@@ -327,7 +331,7 @@ i:hover {opacity: .8}
 
     .about-us h3 {
         font-style: italic;
-        color: #ddd;
+        /* color: #ddd; */
         font-size: larger;
     }
     .our-motto {
@@ -336,14 +340,36 @@ i:hover {opacity: .8}
         padding: 22px;
         margin: 44px 0;
         gap: 22px;
-        text-align: left;
+        text-align: center;
         border: 2px solid #717171;
     }
 
+    .criteria {
+        padding: 22px 0;
+        transition: all .4s cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+    .criteria:hover {
+        background-color: rgb(97, 26, 26)
+    }
+   .criteria:nth-of-type(2n) {
+    border-left: 1px solid rgba(109, 99, 99, 0.75);
+   }
+
+   .cyan {
+    color: rgb(7, 195, 241)
+   }
     @media screen and (max-width: 600px) {
         .our-motto {
             text-align: center;
             grid-template-columns: 1fr;
             border: 2px solid #717171;
         }
+        .criteria:not(:nth-of-type(4)) {
+            border-left: none;
+            border-bottom: 1px solid rgba(109, 99, 99, 0.75)
+        }
+        .criteria:nth-of-type(2n) {
+            border-left: none
+           }
+
     }
