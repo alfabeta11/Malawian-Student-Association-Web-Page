@@ -1,6 +1,40 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Roboto:wght@400;500;700&display=swap');
 
-/*** General overview ***/
+
+
+
+
+
+/****** GENERAL OVERVIEW  - VARIABLES ******/
+
+:root {
+
+    /* FONT SIZE */
+    --font-size-small: 14px;
+    --font-size-normal: 16px;
+    --font-size-medium: 20px;
+    --font-size-large: 26px;
+    --font-size-x-large: 32px;
+
+    /* BACKGROUND - COLORS */
+    --main-color: rgb(90, 4, 4);
+    --third-color: rgba(20, 20, 20);
+    --second-color: rgba(255, 255, 255, 0.548);
+
+    /* FONT-COLORS */
+    --color-one: #ccc; /* white - ish */
+    --color-two: #eee; /* white */
+    --color-three: rgb(7, 195, 241); /* cyan */
+    --color-four: rgba(90, 4, 4, .7); /* brown */
+
+    /* SPACING - PADDING - MARGIN */
+    --x-small-space: 8px;
+    --small-space: 12px;
+    --normal-space: 22px;
+    --medium-space: 26px;
+    --big-space: 32px;
+    --x-big-space: 44px;
+}
 
 * {
     box-sizing: border-box;
@@ -8,67 +42,98 @@
     margin: 0;
     
 }
+
 body {
-    background-color: rgba(255, 255, 249, 0.986);
+    background-color: var(--second-color);
 }
 
-/*** Typography ***/
+
+/****** TYPOGRAPHY - COLORS - LINKS - LISTS - BUTTONS *****/
+
+/* TEXT */ 
 
 body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 1rem;
+    font-size: var(--font-size-small);
     font-weight: 400;
     line-height: 1.5;
+    color: var(--color-one);
 }
 
 a {
     text-decoration: none;
-    color: #333;
-    transition: transform .4s ease-in-out;
+    color: var(--color-four);
 }
 
-.medium-title {
-    font-size: 24px;
+/* Big title */
+h1, .big-title {
+    font-size: var(--font-size-large);
+}
+
+/* Medium Title */
+h2, h3, .text p, .text button, input[type="submit"] {
+    font-size: var(--font-size-medium);
+}
+
+/* Small Title */
+h4, h5, h6, .nav-link, .prev, .next {
+    font-size: var(--font-size-normal);
     font-weight: 500;
 }
-.big-title {
-    font-size: 30px;
-}
-.white {
-    color: white;
-    font-weight: 600;
+
+/* Italic */
+h2, h3, h4 {
+    font-style: italic;
 }
 
-h1, h2, h3, h4 {
-    font-style: italic;
-    opacity: .8;
-    text-transform: capitalize;   
+/* Capitalize */
+h1, h2, h3, h4, h5, h6, .nav-link, .prev, .next, .text button, .text p, input[type="submit"] {
+    text-transform: capitalize;  
+    color: var(--color-two);
 }
-h1 {
-    font-size: 32px;
+
+/* Responsive Font-sizes */
+@media only screen and (min-width: 800px) {
+    body{
+        font-size: var(--font-size-normal);
+    }
+    h1, .big-title {
+        font-size: var(--font-size-x-large);
+    }
+    h2, h3, .text p, .text button, input[type="submit"]  {
+        font-size: var(--font-size-large);
+    }
+    h4, h5, h6, .nav-link, .prev, .next {
+        font-size: var(--font-size-medium);
+    }
 }
-/** list ***/
+
+/** List ***/
 ul {
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
-/*** Components  & Layouts  ***/
- 
-header, .dropdown-container {
-    user-select: none;
-    -webkit-user-select: none;
+/* ICONS */ 
+
+header i, #closeBtn {
+    color: var(--color-one);
+    font-size: var(--font-size-x-large);
 }
-header {
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    padding: 0 15px;
-    background-color: rgb(90, 4, 4);
-    height: 120px;
-    margin-bottom: 35px;
+
+.close {
+    position: fixed;
+    top: 3%;
+    right: 2.5%; 
 }
+
+i:hover {opacity: .8}
+
+/****** LAYOUT - COMPONENTS - SMALL DETAILS ******/
+
+/** STYLE CLASSES **/
+
 .flex {
     display: flex;
 }
@@ -81,44 +146,106 @@ header {
     flex-direction: row;
 }
 
+/* center element / container - horizontal */
+.center {
+    justify-content: center;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* center element / container - vertical */
+.middle {
+    vertical-align: middle;
+    align-items: center;
+    align-self: center;
+}
+
+/* Icon & nav-link padding - **normal-padding** */
+.normal-padding {
+    padding: 8px 15px;
+}
+/** TRANSITIONS **/
+
+/* Ease-in-out */
+a, .nav-bar, .dropdown-container, .nav-container, .text button, input[type="submit"] {
+    transition: all .4s ease-in-out;
+}
+
+/* Cubic - bezier */
+.mySlides img, .criteria {
+    transition: all .6s cubic-bezier(0.75, 0.82, 0.165, 1);
+}
+
+/* Backgrounds */
+header, .close, .text, .card, .about-us {
+    background-color: var(--main-color);
+}
+/** HEADER - DROPDOWN - NAVBAR **/
+
+header, .dropdown-container {
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+/* HEADER */
+
+header {
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 var(--normal-space);
+    height: 120px;
+    position: fixed;
+    top: 0;
+    z-index: 2;
+    margin-bottom: 132px;
+}
+
+/* NAV BAR */
 .nav-bar {
     max-width: 600px;
-    display: none;
-    text-transform: capitalize;
-    transition: transform .4s ease-in-out;
+    display: none; 
 }
-@media only screen and (min-width: 700px) {
+
+/* Responsive header and nav-bar */
+@media only screen and (min-width: 650px) {
+
     .nav-bar {
         display: block;
     }
+
     .dropdown-container, .icon-container {
         display: none;
     }
 }
 
+/* NAV LIST & LINK */
 .nav-list{
     justify-content: space-around;
 }
 
 .nav-link {
-    color: white;
     display: block;
 }
 
 .nav-link:hover {
-    color: rgb(7, 195, 241);
+    color: var(--color-three); /*cyan*/
 }
 
+/* LOGO CONTAINER */
 .logo {
     height: 120px;
     width: 120px;
-    transform: translateY(20%);
+    /* transform: translateY(20%); */
 }
+
+/* LOGO IMG */
 .logo img {
     width: 100%;
     height: 100%;
 }
 
+/* Dropdown for small screens */
 .dropdown-container {
     position: fixed;
     left: 0;
@@ -127,57 +254,33 @@ header {
     right: 0;
     background-color: rgba(0, 0, 0, .96);
     z-index: 5;
-    padding: 15px 0;
-    transition: transform .4s ease-in-out;
+    padding: var(--normal-space) 0;
     transform: translateX(-100%);
   }
   
+  /* When the dropdown is visible */
   .open {
     display: block;
     transform: translateX(0%);
   }
 
   .nav-container {
-    background-color: white;
+    background-color: var(--color-two);
     width: 80%;
     max-width: 400px;
     height: 100vh;
-    padding: 30px;
-    transition: transform .4s ease-in-out;
+    padding: var(--medium-space);
   }
 
-header i, #closeBtn {
-    color: white;
-    font-size: 32px;
-}
 
-.normal-padding {
-    padding: 8px 15px;
-}
 .nav-container .nav-link {
     background-color: #333;
-    margin: 8px 0;
+    margin: var(--small-space) 0;
 }
 
 .nav-container .nav-link:hover {
     transform: translateX(5%);
 }
-
-.close {
-    position: fixed;
-    top: 3%;
-    right: 2.5%; 
-    background-color: rgb(90, 4, 4);
-}
-
-.icon-container {
-    background: rgb(20, 1, 1);
-}
-i:hover {opacity: .8}
-
-/*********************************************** FROM W3SCHOOLS **************************************** /
-
-* {box-sizing:border-box}
 
 /* Slideshow container */
 .slideshow-container {
@@ -190,12 +293,9 @@ i:hover {opacity: .8}
   .mySlides {
     display: none;
   }
-  
-  .mySlides img {
-    transition: all .6s cubic-bezier(0.075, 0.82, 0.165, 1);
-  }
+
   .mySlides:hover img{
-    filter: blur(1px);
+   opacity: .9;
   }
   /* Next & previous buttons */
   .prev, .next {
@@ -204,8 +304,7 @@ i:hover {opacity: .8}
     top: 50%;
     width: auto;
     margin-top: -22px;
-    padding: 16px;
-    color: white;
+    padding: var(--normal-space);
     font-weight: bold;
     font-size: 18px;
     transition: 0.6s ease;
@@ -226,38 +325,34 @@ i:hover {opacity: .8}
   
   /* Caption text */
   .text {
-    background-color: rgba(90, 4, 4, .75);
-    color: rgba(248, 244, 244, 0.87);
-    padding: 1rem 2rem;
+    opacity: .75;
+    color: var(--color-two);
+    padding: var(--normal-space) calc(var(--normal-space) * 1.5);
     position: absolute;
     bottom: 10px;
     width: 100%;
     font-weight: 600;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     display: grid;
     grid-template-columns: auto auto auto;
-    text-transform: capitalize;
     line-height: 1.2;
     letter-spacing: 1px;
   }
+
   .text p {
     grid-column: span 2;
-    font-size: 36px;
   }
-  .text button {
+
+  .text button, input[type="submit"] {
     align-self: center;
-    padding: 8px 30px;
-    font-size: 32px;
-    background-color: whitesmoke;
-    color: rgb(90, 4, 4);
-    border: 2px solid whitesmoke;
-    text-transform: capitalize;
+    padding: 4px 15px;
+    background-color: var(--second-color);
+    color: var(--main-color);
+    border: 2px solid var(--second-color);
   }
-  .text button:hover {
+  .text button:hover, input[type="submit"]:hover {
     background-color: black;
-    color:white;
-    border-color: white;
-    transition: all ease-in-out .3s;
+    color:var(--color-two);
+    border-color: var(--color-two);
   } 
     
   @media  screen and (max-width: 750px) {
@@ -271,13 +366,6 @@ i:hover {opacity: .8}
    .mySlides img {
     height: 100%;
     object-fit: cover;
-   }
-   .text p {
-    font-size: 16px;
-   }
-   .text button {
-    padding: 4px 15px;
-    font-size: 16px;
    }
    .text {
     padding: 1rem;
@@ -300,7 +388,7 @@ i:hover {opacity: .8}
     height: 15px;
     width: 15px;
     margin: 0 2px;
-    background-color: #bbb;
+    background-color: var(--color-one);
     border-radius: 50%;
     display: inline-block;
     transition: background-color 0.6s ease;
@@ -321,50 +409,44 @@ i:hover {opacity: .8}
     to {opacity: 1}
   }
 
+  /** ABOUT - US & STRUCTURE **/
+
+  .about-us, .our-motto {
+    padding: var(--medium-space);
+  }
+  /* About us */
     .about-us {
-        margin-top: 22px;
-        background-color: rgb(90, 4, 4);
-        color: #ccc;
-        padding: 22px;
+        margin-top: var(--medium-space);
+        color: var(--color-one);
         text-align: center;
     }
-
-    .about-us h3 {
-        font-style: italic;
-        /* color: #ddd; */
-        font-size: larger;
-    }
+/* Our motto */
     .our-motto {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        padding: 22px;
-        margin: 44px auto;
-        gap: 22px;
+        margin: var(--x-big-space) auto;
+        gap: var(--medium-space);
         text-align: center;
         border: 2px solid #717171;
         width: 100%;
         max-width: 1000px;
         
     }
-
+/* Criteria */
     .criteria {
-        padding: 22px 0;
-        transition: all .6s cubic-bezier(0.075, 0.82, 0.165, 1);
+        padding: var(--medium-space) 0;
     }
     .criteria:hover {
-        background-color: rgb(97, 26, 26)
+        opacity: .7;
     }
    .criteria:nth-of-type(2n) {
     border-left: 1px solid rgba(109, 99, 99, 0.75);
    }
 
    .cyan {
-    color: rgb(7, 195, 241);
+    color: var(--color-three);
    }
     @media screen and (max-width: 600px) {
-        h1 {
-            font-size: 24px;
-        }
         .our-motto {
             text-align: center;
             grid-template-columns: 1fr;
@@ -383,15 +465,20 @@ i:hover {opacity: .8}
     /* Executives */
     .executive {
         width: 100%;
-        
-        margin: 44px auto;
+        margin: 0 auto var(--big-space);
         position: relative;
         overflow: none;
-        padding: 44px 44px 0;
-        border-top: 2px solid rgb(90, 4, 4);
-        border-bottom: 2px solid rgb(90, 4, 4);
-        background-color: #eee;
+        background-color: var(--second-color);
         text-align: center;
+        padding: 22px 16px
+    }
+    .executive:hover {
+        background-color: #f9f9f9;
+    }
+    .executive h1 {
+        color: var(--main-color);
+        text-transform: uppercase;
+        letter-spacing: 1px;
     }
     .container {
         margin: 0 auto;
@@ -399,11 +486,12 @@ i:hover {opacity: .8}
         display: grid;
         grid-template-columns: 1fr 1fr;
         width: 100%;
-        padding: 22px 22px 44px;
-        gap: 44px 66px;
+        padding: var(--medium-space);
+        gap: var(--big-space) var(--x-big-space);
         text-align: left;
     }
-    .titles {
+    
+    .card {
         overflow: hidden;
         min-height: 400px;
         padding: 0 0 8px;
@@ -413,13 +501,13 @@ i:hover {opacity: .8}
         box-shadow: 1px 2px 4px rgba(90, 4, 4,.9), 0 1px 6px rgba(0, 0, 0, .19);
         transition: all ease-in-out .5s;
     }
-    .titles:hover {
+    .card:hover {
         background-color: rgba(90, 4, 4, .9);
         box-shadow: 2px 2px 4px rgba(90, 4, 4,.9), 0 1px 6px rgba(0, 0, 0, .19);
     }
-    .titles img {
+    .card img {
         width: 100%;
-        height: 300px;
+        max-height: 350px;
         object-fit: cover;
     }
     .desc {
@@ -428,17 +516,40 @@ i:hover {opacity: .8}
     .desc h5 {
         margin-bottom: 8px;
     }
-    @media screen and (max-width: 750px) {
+
+
+    @media  screen and (max-width: 800px) {
+        .container {
+            gap: var(--small-space);
+        }
+    }
+    @media screen and (max-width: 650px) {
         .executive {
-            padding: 22px 16px;
+            padding: var(--medium-space) 16px;
         }
         .container {
-            padding: 22px 8px 44px;
+            padding: var(--medium-space) 0 var(--big-space);
         }
-        .titles {
+        .card {
             grid-column: span 2;
         }
     }
     * {
         scroll-behavior: smooth;
+    }
+
+    .brown {
+        background-color: rgb(97, 4, 4);
+        padding: 44px 0;
+        margin: 44px 0;
+    }    
+
+
+    footer {
+        background-color: rgb(90, 4, 4);
+        color:rgba(218, 213, 213, 0.75);
+        padding: 22px;
+        text-align: center;
+        font-size: 14px;
+        margin: 0;
     }
