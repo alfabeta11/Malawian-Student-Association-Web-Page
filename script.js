@@ -1,8 +1,22 @@
 let dropdown = document.querySelector('.dropdown-container');
 let navContainer = document.querySelector('.nav-container');
 let menuBtn = document.querySelector('#menuBtn');
+let header = document.querySelector('header')
 let closeBtn = document.querySelector('#closeBtn');
 
+let lastScrollTop = 0;
+
+// Show/hide header on scroll;
+window.addEventListener("scroll", function() {
+  var scrollTop = window.scrollY || (document.documentElement.scrollTop);
+  if (scrollTop > lastScrollTop) {
+    header.style.top = "-100px";
+  } else {
+    header.style.top = "0";
+  }
+  lastScrollTop = scrollTop;
+
+})
 // This function shows/hide an item when called;
 
 function showItem(item, bool) {
@@ -40,8 +54,11 @@ function currentSlide(n) {
 function showSlides(n) {
   let i;
   let slides = document.getElementsByClassName("mySlides");
+  
   let dots = document.getElementsByClassName("dot");
+  
   if (n > slides.length) {slideIndex = 1}
+
   if (n < 1) {slideIndex = slides.length}
   for (i = 0; i < slides.length; i++) {
     slides[i].style.display = "none";
@@ -52,3 +69,17 @@ function showSlides(n) {
   slides[slideIndex-1].style.display = "block";
   dots[slideIndex-1].className += " active";
 }
+
+// Animate on scroll
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if(entry.isIntersecting) {
+      entry.target.classList.add("show");
+    }
+    else {
+      entry.target.classList.remove("show")
+    }
+  })
+});
+const hiddenElements = document.querySelectorAll(".hidden");
+hiddenElements.forEach((el) => observer.observe(el));

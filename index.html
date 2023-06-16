@@ -8,6 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Homepage</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="structure.css">
     <script src="script.js" defer></script>
 </head>
 
@@ -23,7 +25,6 @@
                 <li class="nav-item"><a href="#" class="nav-link capital medium-title normal-padding">Home</a></li>
                 <li class="nav-item"><a href="#" class="nav-link capital medium-title normal-padding">About Us</a></li>
                 <li class="nav-item"><a href="#" class="nav-link capital medium-title normal-padding">Structure</a></li>
-                <li class="nav-item"><a href="#" class="nav-link capital medium-title normal-padding">Contact Us</a></li>
             </ul>
         </div>
         <div class="close normal-padding">
@@ -33,14 +34,15 @@
 
     <header class="flex row middle">
         <div class="logo">
-            <img src="images/denin-lawley-HaziTVzN4CU-unsplash.jpg" alt="logo">
+            <img src="images/mast_logo.png" alt="logo">
         </div>
         <div class="nav-bar">
             <ul class="nav-list flex row">
                 <li class="nav-item"><a href="#home" class="nav-link capital medium-title normal-padding">Home</a></li>
-                <li class="nav-item"><a href="#about-us" class="nav-link capital medium-title normal-padding">About Us</a></li>
-                <li class="nav-item"><a href="#structure" class="nav-link capital medium-title normal-padding">Structure</a></li>
-                <li class="nav-item"><a href="#" class="nav-link capital medium-title normal-padding">Contact Us</a></li>
+                <li class="nav-item"><a href="#about-us" class="nav-link capital medium-title normal-padding">About
+                        Us</a></li>
+                <li class="nav-item"><a href="#structure"
+                        class="nav-link capital medium-title normal-padding">Structure</a></li>
             </ul>
         </div>
         <div class="icon-container normal-padding">
@@ -56,39 +58,30 @@
 
             <!-- Full-width images with number and caption text -->
             <div class="mySlides fade">
-                <div class="numbertext">1 / 4</div>
-                <img src="images/mast.JPG" style="width:100%">
+                <div class="numbertext">1 / 3</div>
+                <img src="images/kayseri_meeting.JPG" style="width:100%">
                 <div class="text">
-                    <p> Lorem ipsum <span class="cyan">dolor</span> sit amet, consectetur adipisicing.</p>
-                    <button>lorem</button>
+                    <p> we are the MAST.</p>
+                    <p> MAST meeting in kayseri 2023.</p>
                 </div>
-               
+
             </div>
 
             <div class="mySlides fade">
-                <div class="numbertext">2 / 4</div>
-                <img src="images/IMG_0245.JPG" style="width:100%">
+                <div class="numbertext">2 / 3</div>
+                <img src="images/istanbul_meeting_1.jpg" style="width:100%">
                 <div class="text">
-                    <p> Lorem ipsum <span class="cyan">dolor</span> sit amet, consectetur adipisicing.</p>
-                    <button>lorem</button>
-                </div>
-            </div>
-
-            <div class="mySlides fade">
-                <div class="numbertext">3 / 4</div>
-                <img src="images/MAST PICTURE.jpg" style="width:100%">
-                <div class="text">
-                    <p> Lorem ipsum <span class="cyan">dolor</span> sit amet, consectetur adipisicing.</p>
-                    <button>lorem</button>
+                    <p> we are the MAST.</p>
+                    <p> MAST meeting in istanbul 2022.</p>
                 </div>
             </div>
 
             <div class="mySlides fade">
-                <div class="numbertext">4 / 4</div>
-                <img src="images/23.jpg" style="width:100%">
-               <div class="text">
-                    <p> Lorem ipsum <span class="cyan">dolor</span> sit amet, consectetur adipisicing.</p>
-                    <button>lorem</button>
+                <div class="numbertext">3 / 3</div>
+                <img src="images/istanbul_meeting_2.jpg" style="width:100%">
+                <div class="text">
+                    <p> we are the MAST</p>
+                    <p>MAST meeting in istanbul 2022.</p>
                 </div>
             </div>
 
@@ -103,78 +96,113 @@
             <span class="dot" onclick="currentSlide(1)"></span>
             <span class="dot" onclick="currentSlide(2)"></span>
             <span class="dot" onclick="currentSlide(3)"></span>
-            <span class="dot" onclick="currentSlide(4)"></span>
         </div>
 
-        
+
         <!-- The secondary informations-->
 
-        <div class="about-us" id="about-us">
-            <h1><span class="cyan">About Us</span></h1>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et cumque corporis fugit.</p>
-            <div class="our-motto">
-                <div class="criteria">
-                    <h3><i class="bi bi-boxes"></i> <span class="cyan" >Lorem</span>, ipsum.</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur.</p>
+        <section class="about-us" id="about-us">
+            <div class="introduction">
+                <h1>About Us</h1>
+                <p> Malawian Scholars Of Turkey association is an independent, peaceful, democratic, non-political,
+                    non-profit association committed to the interests of Malawian students and graduates from Turkish
+                    academic institutions (based in Turkey) and the ultimate benefit of the society. MAST is an
+                    association
+                    of Malawian students currently studying in turkey and Malawian graduates from Turkish universities.
+                </p>
+            </div>
+
+            <div class="motto">
+                <div class="criteria hidden">
+                    <img src="illustrations/support.svg" alt="">
+                    <h3>UNITED</h3>
+                    <p>Creating a bridge between Malawian students in Turkey and strengthen the relationships with our
+                        country.</p>
                 </div>
-                
-                <div class="criteria">
-                    <h3> <i class="bi bi-boxes"></i> <span class="cyan"> Lorem</span>, ipsum.</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur.</p>
+                <div class="criteria hidden">
+                    <img src="illustrations/cooperative.svg" alt="">
+                    <h3>COOPERATIVE</h3>
+                    <p>
+                        Establish a social environment with "Collaboration", "Fairness" & "Inclusivity".</p>
                 </div>
-                <div class="criteria">
-                    <h3> <i class="bi bi-boxes"></i> <span class="cyan" >Lorem</span>, ipsum.</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur.</p>
+                <div class="criteria hidden">
+                    <img src="illustrations/teamwork.svg" alt="">
+                    <h3>LINKED</h3>
+                    <p>
+                        MAST provides a space for its members to showcase their skills & experiences in order to attract
+                        job offers & networking groups.
+                    </p>
                 </div>
-                <div class="criteria">
-                    <h3> <i class="bi bi-boxes"></i> <span class="cyan" >Lorem</span>, ipsum.</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur.</p>
+                <div class="criteria hidden">
+                    <img src="illustrations/solution_mindset.svg" alt="">
+                    <h3>INTEGRATION</h3>
+                    <p>
+                        We enable integration through effective communication, streamlines operations and promoting a
+                        holistic approach to problem-solving and decision-making.</p>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <div class="executive" id="structure">
-            <h1><span>Structure</span></h1>
-            <div class="container">
+        <div class="structure " id="structure">
+            <h1>Structure</h1>
+            <div class="admins">
+                <div class="hidden admin">
+                    <div class="img-container">
+                        <img loading="lazy" decoding="async" src="images/president_collins.jpg" alt="">
+                    </div>
 
-                <div class=" card president">
-                    <img src="images/prince-akachi-J1OScm_uHUQ-unsplash.jpg" alt="">
                     <div class="desc">
-                        <h4>Lorem, <span class="cyan">ipsum </span> dolor.</h4>
-                        <h5>Lorem, ipsum.</h5>
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta, consequatur!
+                        <h4>President</h4>
+                        <h5>Mr. COLLINS</h5>
+                        <p>
+                            As The President of MAST, my responsibilities are to work with The Vice President and the
+                            executive members in establishing agendas for the well being of the association and
+                            presiding
+                            over the apointed agendas,calling special meetings of the association in order to create
+                            awareness to the members and to help solve matters not only concerning MAST as an
+                            association
+                            but also to help MAST members individually.!
+                        </p>
+
                     </div>
                 </div>
-                
-                <div class=" card vice-president">
-                    <img src="images/prince-akachi-J1OScm_uHUQ-unsplash.jpg" alt="">
+
+                <div class="hidden admin">
+                    <div class="img-container">
+                        <img loading="lazy" decoding="async" src="images/hadji_chiuta_vp.png" alt="">
+                    </div>
+
                     <div class="desc">
-                        <h4>Lorem, <span class="cyan">ipsum </span> dolor.</h4>
-                        <h5>Lorem, ipsum.</h5>
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta, consequatur!
+                        <h4>Vice President</h4>
+                        <h5>Hadji CHIUTA</h5>
+                        <p>
+                            I'm currently the vice president and my role is to work hand in hand with the the main
+                            president
+                            in matters concerning Mast and to help offer solutions and ideas to the executive committee
+                            and also to act as the president when the main president is unavailable.
+                        </p>
                     </div>
                 </div>
-                <div class=" card secretary">
-                    <img src="images/prince-akachi-J1OScm_uHUQ-unsplash.jpg" alt="" >
-                    <div class="desc">
-                        <h4>Lorem, <span class="cyan">ipsum </span> dolor.</h4>
-                        <h5>Lorem, ipsum.</h5>
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta, consequatur!
+
+                <div class="hidden admin">
+                    <div class="img-container">
+                        <img loading="lazy" decoding="async" src="images/learnmore_1.png" alt="">
                     </div>
-                </div>
-                <div class=" card member">
-                    <img src="images/prince-akachi-J1OScm_uHUQ-unsplash.jpg" alt="">
+
                     <div class="desc">
-                        <h4>Lorem, <span class="cyan">ipsum </span>dolor.</h4>
-                        <h5>Lorem, ipsum.</h5>
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta, consequatur!
+                        <h4>Secretor</h4>
+                        <h5>Youssouf Learmore BANDA</h5>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos facilis ipsam blanditiis provident, placeat omnis! At consequatur consectetur enim nemo sit nobis illum. Iure modi, illum ea reprehenderit eligendi officia magni totam eveniet error ducimus! Placeat et eos porro ut?
+                        </p>
+
                     </div>
                 </div>
 
             </div>
-           
+
         </div>
-      
+
     </main>
 
     <footer class="center flex middle">

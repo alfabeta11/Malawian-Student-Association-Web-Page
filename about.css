@@ -1,0 +1,75 @@
+.about-us {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem 2rem 4rem;
+}
+
+.introduction, .motto {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.introduction {
+  text-align: center;
+  font-size: 14px;
+}
+
+.motto {
+  display: grid;
+  margin: 1rem auto .5rem;
+  padding: .5rem;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: .5rem;
+  row-gap: .5rem;
+  justify-content: center;
+}
+.criteria{
+  display: flex;
+  flex-direction: column;
+  height: 250px;
+  padding: 1rem;
+  font-size: .75rem;;
+}
+
+.criteria img {
+  width: 100%;
+  height: 50%;
+  background: transparent;
+}
+
+.criteria h3 {
+  margin: 1rem 0 0;
+  font-size: 1rem;
+  color: silver;
+  font-family: serif;
+  letter-spacing: 1px;
+}
+.criteria p {
+  color: #dad8d8;
+}
+@media only screen and (max-width: 950px) {
+  .about-us {
+    padding: 1rem 1rem;
+  }
+  .motto {
+    grid-template-columns: repeat(2, 1fr);
+    margin: .5rem auto;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .motto {
+    grid-template-columns: 1fr;
+    max-width: 80%;
+  }
+  .criteria {
+    justify-self: stretch;
+    align-items: center; 
+    justify-content: center;
+    text-align: center;
+  }
+  .criteria img {
+    width: 85%
+  }
+}
