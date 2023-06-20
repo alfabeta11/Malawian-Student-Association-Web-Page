@@ -1,8 +1,11 @@
 .about-us {
+  background-color: rgba(90, 4, 4, .9);
+  /* color: #253029; */
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 2rem 2rem 4rem;
+  position: relative;
 }
 
 .introduction, .motto {
@@ -49,6 +52,16 @@
 .criteria p {
   color: #dad8d8;
 }
+
+.wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
 @media only screen and (max-width: 950px) {
   .about-us {
     padding: 1rem 1rem;
@@ -58,7 +71,7 @@
     margin: .5rem auto;
   }
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 550px) {
   .motto {
     grid-template-columns: 1fr;
     max-width: 80%;

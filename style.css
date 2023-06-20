@@ -79,7 +79,7 @@ h2, h3, .text p, .text button {
 }
 
 /* Small Title */
-h4, h5, h6, .nav-link, .prev, .next {
+h4, h5, h6, .prev, .next {
     font-size: var(--font-size-normal);
     font-weight: 500;
 }
@@ -88,6 +88,11 @@ h4, h5, h6, .nav-link, .prev, .next {
 h1, h2, h3, h4, h5, h6, .nav-link, .prev, .next, .text button, .text p{
     text-transform: capitalize;  
     color: var(--color-two);
+}
+
+strong {
+    color: #ff9677;
+    text-transform: capitalize;
 }
 
 /* Responsive Font-sizes */
@@ -113,20 +118,6 @@ ul {
     padding: 0;
 }
 
-/* ICONS */ 
-
-header i, #closeBtn {
-    color: var(--color-one);
-    font-size: var(--font-size-x-large);
-}
-
-.close {
-    position: fixed;
-    top: 3%;
-    right: 2.5%; 
-}
-
-i:hover {opacity: .8}
 
 /****** LAYOUT - COMPONENTS - SMALL DETAILS ******/
 
@@ -165,22 +156,16 @@ i:hover {opacity: .8}
 }
 
 /** TRANSITIONS **/
-a, .nav-bar, .dropdown-container, .nav-container, .mySides img{
+a, .nav-bar, .mySides img{
     transition: all .4s ease-in-out;
 }
 
 /* Backgrounds */
-header, .close, .text, .about-us {
+header, .text, .about-us {
     background-color: var(--main-color);
 }
-/** HEADER - DROPDOWN - NAVBAR **/
 
-header, .dropdown-container {
-    user-select: none;
-    -webkit-user-select: none;
-}
-
-/* HEADER */
+/* ======== HEADER ========== */
 
 header {
     position: fixed;
@@ -192,24 +177,13 @@ header {
     transition: all .6s cubic-bezier(0.75, 0.82, 0.165, 1);
     z-index: 2;
     border-bottom: 1px solid #797575;
+    user-select: none;
+    -webkit-user-select: none;
 }
 
-/* NAV BAR */
+/* ======= NAV BAR =========*/
 .nav-bar {
     max-width: 600px;
-    display: none; 
-}
-
-/* Responsive header and nav-bar */
-@media only screen and (min-width: 650px) {
-
-    .nav-bar {
-        display: block;
-    }
-
-    .dropdown-container, .icon-container {
-        display: none;
-    }
 }
 
 /* NAV LIST & LINK */
@@ -229,7 +203,6 @@ header {
 .logo {
     height: 100px;
     width: 100px;
-    /* transform: translateY(20%); */
 }
 
 /* LOGO IMG */
@@ -238,54 +211,18 @@ header {
     height: 100%;
 }
 
-/* Dropdown for small screens */
+/* ======== Main ============ */
 main {
     margin-top: 100px;
 }
-.dropdown-container {
-    position: fixed;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    background-color: rgba(0, 0, 0, .96);
-    z-index: 5;
-    padding: var(--normal-space) 0;
-    transform: translateX(-100%);
-  }
-  
-  /* When the dropdown is visible */
-  .open {
-    display: block;
-    transform: translateX(0%);
-  }
 
-  .nav-container {
-    background-color: var(--color-two);
-    width: 80%;
-    max-width: 400px;
-    height: 100vh;
-    padding: var(--medium-space);
-  }
-
-
-.nav-container .nav-link {
-    background-color: #333;
-    margin: var(--small-space) 0;
-}
-
-.nav-container .nav-link:hover {
-    transform: translateX(5%);
-}
-
-/* Slideshow container */
+/* ========== Slideshow container =========*/
 .slideshow-container {
     margin: auto;
     max-width: 1000px;
     position: relative;
   }
 
-  /* Hide the images by default */
   img {
     background-color:rgb(94, 90, 90);
   }
@@ -399,16 +336,60 @@ main {
 
   /** ABOUT - US & STRUCTURE **/
 
-  /* About us */
+  /* ======== About us ========*/
     .about-us {
         margin-top: var(--medium-space);
         color: var(--color-one);
     }
+
     .brown {
         background-color: rgb(97, 4, 4);
         padding: 44px 0;
         margin: 44px 0;
     }
+
+    /* ======= Contact ======= */
+    .contact-us {
+        
+        position: fixed;
+        right: 5px;
+        top: 75%;
+        transform: translateY(-50%);
+    }
+
+    .contact {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: center;
+        margin: .25rem .25rem;
+    }
+
+    .contact i{
+        display: block;
+        font-size: 1.5rem;
+        border-radius: 50%;
+        background: black;
+        padding: .5rem .9rem;
+        transition: all 500ms;
+        color: white;
+        opacity: .5;
+    }
+    
+    .contact i:hover{
+        opacity:1;
+        transform: rotate(360deg);
+    }
+
+   .contact p {
+        font-size: 10px;
+        background: rgba(0, 0, 0, 0.716);
+        border-radius: 1rem 0 0 1rem;
+        transition: all ease-in 500ms;
+        opacity: 0;
+        transition-delay: 100ms;
+    }
+
     /* ============ Footer ============*/
 
     footer {

@@ -1,9 +1,3 @@
-let dropdown = document.querySelector('.dropdown-container');
-let navContainer = document.querySelector('.nav-container');
-let menuBtn = document.querySelector('#menuBtn');
-let header = document.querySelector('header')
-let closeBtn = document.querySelector('#closeBtn');
-
 let lastScrollTop = 0;
 
 // Show/hide header on scroll;
@@ -26,16 +20,6 @@ function showItem(item, bool) {
       item.classList.remove('open');
     }
   }
-  
-  menuBtn.addEventListener('click', () => {
-    showItem(dropdown, true);
-    showItem(navContainer, true);
-  })
-  
-  closeBtn.addEventListener('click', () => {
-    showItem(dropdown, false);
-    showItem(navContainer, false);
-  })
 
   /***************************************************FROM W3SCHOOLS ********************************* */
   let slideIndex = 1;
@@ -81,5 +65,6 @@ const observer = new IntersectionObserver((entries) => {
     }
   })
 });
+
 const hiddenElements = document.querySelectorAll(".hidden");
 hiddenElements.forEach((el) => observer.observe(el));

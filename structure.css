@@ -1,6 +1,7 @@
 .structure {
   margin: 1.5rem auto;
-  background: transparent;
+  background-color: transparent;
+  
   color:rgb(45, 42, 42);
 }
 .structure h1 {
@@ -27,7 +28,7 @@
 }
 
 .admin .desc {
-  background-color: rgba(90, 4, 4, .1);
+  background-color: #e5e4e4;
   padding: .5rem 1rem;
 }
 
@@ -36,12 +37,19 @@
 }
 
 .admin h4, .admin h5{
-  color: rgb(47, 38, 38);
+  color: #f54768;
   font-family: serif;
+  font-weight: bold
 }
 
+.admin h4 {
+  opacity: .7
+}
 .desc h5 {
   margin-bottom: 8px;
+}
+.desc p {
+  color: rgb(110, 108, 108);
 }
 .admin img {
   width: 100%;
